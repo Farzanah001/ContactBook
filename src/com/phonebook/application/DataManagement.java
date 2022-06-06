@@ -6,7 +6,7 @@ import java.util.Scanner;
 import com.phonebook.application.*;
 
 public class DataManagement {
-    static HashMap<String,ContactPojo> contactMap=new HashMap<>();
+    static HashMap<Integer,ContactPojo> contactMap=new HashMap<>();
 
     public void addNewEntry() {
         Scanner scan=new Scanner(System.in);
@@ -16,7 +16,7 @@ public class DataManagement {
         int n=scan.nextInt();
         for(int i=0;i<n;i++) {
 //            System.out.println("Enter the User ID:");
-//            contact.setUserID(scan.next());
+           // contact.setUserID();
             System.out.println("Enter the Name:");
             scan.nextLine();
             contact.setName(scan.nextLine());
@@ -76,7 +76,7 @@ public class DataManagement {
     public void printData() {
         //ContactPojo contact=new ContactPojo();
         //System.out.println("test");
-        for(Map.Entry<String,ContactPojo> viewMap:contactMap.entrySet()){
+        for(Map.Entry<Integer,ContactPojo> viewMap:contactMap.entrySet()){
             //System.out.println(viewMap.getKey()+"\n"+viewMap.getValue());
             System.out.println("User ID:"+viewMap.getKey());
             ContactPojo valueEntry=viewMap.getValue();
@@ -92,8 +92,8 @@ public class DataManagement {
     public void searchData() {
         Scanner s=new Scanner(System.in);
         System.out.println("Enter the UserID to Search: ");
-        String id=s.next();
-        for(Map.Entry<String,ContactPojo> contact:contactMap.entrySet())
+        int id=s.nextInt();
+        for(Map.Entry<Integer,ContactPojo> contact:contactMap.entrySet())
         {
             if(contact.getKey().equals(id)) {
                 System.out.println("User ID:"+contact.getKey());

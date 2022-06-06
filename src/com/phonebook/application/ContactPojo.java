@@ -1,5 +1,5 @@
 package com.phonebook.application;
-import com.phonebook.application.*;
+
 public class ContactPojo {
     private String name;
     public static int userID=100;
@@ -36,11 +36,11 @@ public class ContactPojo {
     public void setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
     }
-    public String getUserID() {
+    public int getUserID() {
         return userID;
     }
 
-    public void setUserID(String userID) {
+    public void setUserID(int userID) {
         this.userID = userID;
     }
 
