@@ -2,7 +2,7 @@ package com.phonebook.application;
 
 public class ContactPojo {
     private String name;
-    public static int userID=100;
+    //private int userID;
 
     private String doorNo;
     private String streetName;
@@ -14,7 +14,6 @@ public class ContactPojo {
     public String toString() {
         return "ContactPojo{" +
                 "name='" + name + '\'' +
-                ", userID='" + userID + '\'' +
                 ", doorNo='" + doorNo + '\'' +
                 ", streetName='" + streetName + '\'' +
                 ", city='" + city + '\'' +
@@ -35,13 +34,6 @@ public class ContactPojo {
 
     public void setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
-    }
-    public int getUserID() {
-        return userID;
-    }
-
-    public void setUserID(int userID) {
-        this.userID = userID;
     }
 
     public String getDoorNo() {
@@ -71,7 +63,7 @@ public class ContactPojo {
 
     ContactPojo(String name,int userID,String phoneNumber,String doorNo,String streetName,String city){
         this.name=name;
-        this.userID=userID++;
+       // this.userID=userID;
         this.phoneNumber=phoneNumber;
         this.doorNo=doorNo;
         this.streetName=streetName;

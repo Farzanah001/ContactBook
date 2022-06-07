@@ -11,12 +11,12 @@ public class DataManagement {
     public void addNewEntry() {
         Scanner scan=new Scanner(System.in);
         ContactPojo contact=new ContactPojo();
-
+        int id=100;
         System.out.println("Enter the Number of Entries you wanna Add:");
         int n=scan.nextInt();
         for(int i=0;i<n;i++) {
 //            System.out.println("Enter the User ID:");
-           // contact.setUserID();
+//            scan.nextInt();
             System.out.println("Enter the Name:");
             scan.nextLine();
             contact.setName(scan.nextLine());
@@ -30,7 +30,7 @@ public class DataManagement {
             contact.setStreetName(scan.nextLine());
             System.out.println("Enter the City Name:");
             contact.setCity(scan.nextLine());
-            contactMap.put(contact.getUserID(), contact);
+            contactMap.put(id++, contact);
         }
     }
 
@@ -38,7 +38,7 @@ public class DataManagement {
         Scanner scan=new Scanner(System.in);
         ContactPojo contact=new ContactPojo();
         System.out.println("Enter the User ID:");
-        String id=scan.next();
+        int id=scan.nextInt();
         Map.Entry c=null;
         for(Map.Entry contactEntry: contactMap.entrySet()){
             if(contactEntry.getKey().equals(id)){
@@ -49,8 +49,7 @@ public class DataManagement {
         if(c!=null){
             //scan.next();
             System.out.println("Enter the Name:");
-            //scan.next();
-            contact.setName(scan.next());
+            contact.setName(scan.nextLine());
             System.out.println("Enter the Phone Number:");
             scan.nextLine();
             contact.setPhoneNumber(scan.nextLine());
