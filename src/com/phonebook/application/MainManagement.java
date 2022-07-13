@@ -1,11 +1,10 @@
 package com.phonebook.application;
-
-import com.phonebook.application.AdminLogin;
-import com.phonebook.application.DataManagement;
+//import com.phonebook.application.AdminLogin;
+//import com.phonebook.application.DataManagement;
 
 import java.util.Scanner;
 
-public class MainManagement extends DataManagement {
+public class MainManagement extends DataManagement{
     public static void main(String[] args) {
         AdminLogin adminLogin=new AdminLogin();
         DataManagement dataManagement=new DataManagement();

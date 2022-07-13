@@ -3,34 +3,35 @@ package com.phonebook.application;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
-import com.phonebook.application.*;
 
-public class DataManagement {
-    static HashMap<Integer,ContactPojo> contactMap=new HashMap<>();
+import com.phonebook.application.*;
+public class DataManagement{
+    HashMap<Integer,ContactPojo> contactMap=new HashMap<>();
 
     public void addNewEntry() {
         Scanner scan=new Scanner(System.in);
-        ContactPojo contact=new ContactPojo();
+
         int id=100;
         System.out.println("Enter the Number of Entries you wanna Add:");
         int n=scan.nextInt();
         for(int i=0;i<n;i++) {
-//            System.out.println("Enter the User ID:");
-//            scan.nextInt();
+            ContactPojo contact=new ContactPojo();
+            System.out.println("Enter the User ID:");
+            contact.setUserID(scan.nextInt());
             System.out.println("Enter the Name:");
             scan.nextLine();
             contact.setName(scan.nextLine());
             System.out.println("Enter the Phone Number:");
-            contact.setPhoneNumber(scan.nextLine());
+            contact.setPhoneNumber(scan.nextLong());
             //System.out.println("Address:");
             System.out.println("Enter the Door Number:");
-            contact.setDoorNo(scan.next());
+            contact.setDoorNo(scan.nextInt());
             System.out.println("Enter the Street Name:");
             scan.nextLine();
             contact.setStreetName(scan.nextLine());
             System.out.println("Enter the City Name:");
             contact.setCity(scan.nextLine());
-            contactMap.put(id++, contact);
+            contactMap.put(contact.getUserID(), contact);
         }
     }
 
@@ -49,26 +50,29 @@ public class DataManagement {
         if(c!=null){
             //scan.next();
             System.out.println("Enter the Name:");
+            scan.nextLine();
             contact.setName(scan.nextLine());
             System.out.println("Enter the Phone Number:");
-            scan.nextLine();
-            contact.setPhoneNumber(scan.nextLine());
+            //scan.nextLong();
+            contact.setPhoneNumber(scan.nextLong());
             //System.out.println("Address:");
             System.out.println("Enter the Door Number:");
-            contact.setDoorNo(scan.next());
+            contact.setDoorNo(scan.nextInt());
             System.out.println("Enter the Street Name:");
             scan.nextLine();
             contact.setStreetName(scan.nextLine());
             System.out.println("Enter the City Name:");
             contact.setCity(scan.nextLine());
-            contactMap.put(id, contact);
+            contactMap.put(contact.getUserID(), contact);
+            System.out.println("Data Updated Successfully!!");
             }
         }
 
     public void deleteEntry() {
+        ContactPojo contactPojo=new ContactPojo();
         Scanner scan=new Scanner(System.in);
         System.out.println("Enter the User ID of the Entry you wanna delete:");
-        String rem= scan.next();
+        int rem= scan.nextInt();
         contactMap.remove(rem);
     }
 
@@ -103,6 +107,7 @@ public class DataManagement {
                 System.out.println("Street Name:"+valueEntry.getStreetName());
                 System.out.println("City:"+valueEntry.getCity());
             }
+            System.out.println();
 //            else{
 //                System.out.println("Entry Not Found!");
 //            }

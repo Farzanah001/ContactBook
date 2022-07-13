@@ -2,24 +2,15 @@ package com.phonebook.application;
 
 public class ContactPojo {
     private String name;
-    //private int userID;
+    private int userID;
 
-    private String doorNo;
+
+
+    private int doorNo;
     private String streetName;
 
     private String city;
-    private String phoneNumber;
-
-    @Override
-    public String toString() {
-        return "ContactPojo{" +
-                "name='" + name + '\'' +
-                ", doorNo='" + doorNo + '\'' +
-                ", streetName='" + streetName + '\'' +
-                ", city='" + city + '\'' +
-                ", phoneNumber='" + phoneNumber + '\'' +
-                '}';
-    }
+    private long phoneNumber;
 
     public String getName() {
         return name;
@@ -28,19 +19,20 @@ public class ContactPojo {
     public void setName(String name) {
         this.name = name;
     }
-    public String getPhoneNumber() {
-        return phoneNumber;
+
+    public int getUserID() {
+        return userID;
     }
 
-    public void setPhoneNumber(String phoneNumber) {
-        this.phoneNumber = phoneNumber;
+    public void setUserID(int userID) {
+        this.userID = userID;
     }
 
-    public String getDoorNo() {
+    public int getDoorNo() {
         return doorNo;
     }
 
-    public void setDoorNo(String doorNo) {
+    public void setDoorNo(int doorNo) {
         this.doorNo = doorNo;
     }
 
@@ -60,10 +52,17 @@ public class ContactPojo {
         this.city = city;
     }
 
+    public long getPhoneNumber() {
+        return phoneNumber;
+    }
 
-    ContactPojo(String name,int userID,String phoneNumber,String doorNo,String streetName,String city){
+    public void setPhoneNumber(long phoneNumber) {
+        this.phoneNumber = phoneNumber;
+    }
+
+    ContactPojo(String name, int userID, long phoneNumber, int doorNo, String streetName, String city){
         this.name=name;
-       // this.userID=userID;
+        this.userID=userID;
         this.phoneNumber=phoneNumber;
         this.doorNo=doorNo;
         this.streetName=streetName;
